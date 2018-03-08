@@ -16,8 +16,8 @@ Route::get('/', function () {
 });
 Route::get('index', 'PageController@home')->name('home');
 
-Route::get('product_type', 'PageController@productType')->name('product.type');
+Route::get('product_type/{type}', 'PageController@productType')->name('product.type');
 
-Route::get('about', 'PageController@about');
+Route::get('about', 'PageController@about')->name('about');
 
-Route::get('contact', 'PageController@contact');
+Route::get('contact', 'PageController@contact')->name('contact');

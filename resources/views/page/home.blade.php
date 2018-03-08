@@ -50,39 +50,42 @@
                                     <div class="col-sm-3">
                                         <div class="space10">&nbsp;</div>
                                         <div class="single-item">
-                                            <div class="single-item-header">
-                                                <a href="product.html">
-                                                    <img src="source/image/product/{!! $new_pro->image !!}"
-                                                         alt="" height="250px">
-                                                </a>
-                                            </div>
-                                            <div class="single-item-body">
-                                                <p class="single-item-title">{!! $new_pro->name !!}</p>
-                                                <p class="single-item-price" style="font-size: 18px">
-                                                    @if($new_pro->promotion_price == 0)
-                                                        <span class="flash-sale">
-                                                            {!! number_format($new_pro->unit_price) !!} đồng
-                                                        </span>
-                                                    @else
-                                                        <span class="flash-del">
-                                                            {!! number_format($new_pro->unit_price) !!} đồng
-                                                        </span>
-                                                        <span class="flash-sale">
-                                                            {!! number_format($new_pro->promotion_price) !!} đồng
-                                                        </span>
-                                                    @endif
-                                                </p>
-                                            </div>
-                                            <div class="space5"></div>
-                                            <div class="single-item-caption">
-                                                <a class="add-to-cart pull-left" href="shopping_cart.html">
-                                                    <i class="fa fa-shopping-cart"></i>
-                                                </a>
-                                                <a class="beta-btn primary" href="product.html">Details
-                                                    <i class="fa fa-chevron-right"></i>
-                                                </a>
-                                                <div class="clearfix"></div>
-                                            </div>
+                                            @if($new_pro->promotion_price != 0)
+                                                <div class="ribbon-wrapper"><div class="ribbon sale">Sale</div></div>
+                                            @endif
+                                                <div class="single-item-header">
+                                                    <a href="product.html">
+                                                        <img src="source/image/product/{!! $new_pro->image !!}"
+                                                             alt="" height="250px">
+                                                    </a>
+                                                </div>
+                                                <div class="single-item-body">
+                                                    <p class="single-item-title">{!! $new_pro->name !!}</p>
+                                                    <p class="single-item-price" style="font-size: 18px">
+                                                        @if($new_pro->promotion_price == 0)
+                                                            <span class="flash-sale">
+                                                                {!! number_format($new_pro->unit_price) !!} đồng
+                                                            </span>
+                                                        @else
+                                                            <span class="flash-del">
+                                                                {!! number_format($new_pro->unit_price) !!} đồng
+                                                            </span>
+                                                            <span class="flash-sale">
+                                                                {!! number_format($new_pro->promotion_price) !!} đồng
+                                                            </span>
+                                                        @endif
+                                                    </p>
+                                                </div>
+                                                <div class="space5">&nbsp;</div>
+                                                <div class="single-item-caption">
+                                                    <a class="add-to-cart pull-left" href="shopping_cart.html">
+                                                        <i class="fa fa-shopping-cart"></i>
+                                                    </a>
+                                                    <a class="beta-btn primary" href="product.html">Details
+                                                        <i class="fa fa-chevron-right"></i>
+                                                    </a>
+                                                    <div class="clearfix"></div>
+                                                </div>
                                         </div>
                                     </div>
                                 @endforeach
@@ -116,7 +119,7 @@
                                                     </span>
                                                 </p>
                                             </div>
-                                            <div class="space5"></div>
+                                            <div class="space5">&nbsp;</div>
                                             <div class="single-item-caption">
                                             <a class="add-to-cart pull-left" href="shopping_cart.html">
                                                 <i class="fa fa-shopping-cart"></i>
