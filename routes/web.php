@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('index', 'PageController@home');
+
+Route::get('product_type', 'PageController@productType');
+
+Route::get('about', 'PageController@about');
+
+Route::get('contact', 'PageController@contact');
