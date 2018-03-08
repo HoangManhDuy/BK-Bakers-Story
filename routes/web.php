@@ -14,9 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('index', 'PageController@home');
+Route::get('index', 'PageController@home')->name('home');
 
-Route::get('product_type', 'PageController@productType');
+Route::get('product_type', 'PageController@productType')->name('product.type');
 
 Route::get('about', 'PageController@about');
 

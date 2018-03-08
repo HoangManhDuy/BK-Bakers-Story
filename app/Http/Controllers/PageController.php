@@ -3,12 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Slide;
+use App\Product;
 
 class PageController extends Controller
 {
     public function home()
     {
-        return view('page.home');
+        $slide = Slide::all();
+        $new_product = Product::where('new', '=', '1')->paginate(8);
+        $sanpham_km = Product::where('promotion_price', '<>', '0')->paginate(8);
+
+        return view('page.home', compact(
+            'slide',
+            'new_product',
+            'sanpham_km'
+        ));
     }
 
     public function productType()
