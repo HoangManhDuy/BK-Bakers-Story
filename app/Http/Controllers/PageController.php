@@ -34,7 +34,18 @@ class PageController extends Controller
             'sp_khac',
             'loai',
             'loai_sp'
-    ));
+        ));
+    }
+
+    public function getProductDetail(Request $req)
+    {
+        $sp_detail = Product::where('id', '=', $req->id)->first();
+        $sp_tuongtu = Product::where('id_type', $sp_detail->id_type)->paginate(3);
+
+        return view('page.product_detail', compact(
+            'sp_detail',
+            'sp_tuongtu'
+        ));
     }
 
     public function about()

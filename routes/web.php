@@ -21,3 +21,5 @@ Route::get('product_type/{type}', 'PageController@productType')->name('product.t
 Route::get('about', 'PageController@about')->name('about');
 
 Route::get('contact', 'PageController@contact')->name('contact');
+
+Route::get('product_detail/{id}', 'PageController@getProductDetail')->name('product.detail');

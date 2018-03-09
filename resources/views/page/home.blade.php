@@ -54,7 +54,7 @@
                                                 <div class="ribbon-wrapper"><div class="ribbon sale">Sale</div></div>
                                             @endif
                                                 <div class="single-item-header">
-                                                    <a href="product.html">
+                                                    <a href="{{ route('product.detail', $new_pro->id) }}">
                                                         <img src="source/image/product/{!! $new_pro->image !!}"
                                                              alt="" height="250px">
                                                     </a>
@@ -107,7 +107,7 @@
                                         <div class="space10">&nbsp;</div>
                                         <div class="single-item">
                                             <div class="single-item-header">
-                                                <a href="product.html">
+                                                <a href="{{ route('product.detail', $km->id) }}">
                                                     <img src="source/image/product/{!! $km->image !!}" alt="" height="250px">
                                                 </a>
                                             </div>
