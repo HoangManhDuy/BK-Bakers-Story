@@ -78,10 +78,12 @@
                                                 </div>
                                                 <div class="space5">&nbsp;</div>
                                                 <div class="single-item-caption">
-                                                    <a class="add-to-cart pull-left" href="shopping_cart.html">
+                                                    <a class="add-to-cart pull-left"
+                                                       href="{{ route('addCart', $new_pro->id) }}">
                                                         <i class="fa fa-shopping-cart"></i>
                                                     </a>
-                                                    <a class="beta-btn primary" href="product.html">Details
+                                                    <a class="beta-btn primary"
+                                                       href="{{ route('product.detail', $new_pro->id) }}">Chi tiết
                                                         <i class="fa fa-chevron-right"></i>
                                                     </a>
                                                     <div class="clearfix"></div>
