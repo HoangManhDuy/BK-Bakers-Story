@@ -33,20 +33,30 @@
 
                 <div class="beta-comp">
                     <div class="cart">
-                        <div class="beta-select"><i class="fa fa-shopping-cart"></i> Giỏ hàng {!! $totalQty !!} <i class="fa fa-chevron-down"></i></div>
+                        <div class="beta-select">
+                            <i class="fa fa-shopping-cart"></i>
+                                @if(Session::has('cart')) Giỏ hàng ({!! $totalQty !!}) @else Giỏ hàng (Trống)@endif
+                            <i class="fa fa-chevron-down"></i>
+                        </div>
                         <div class="beta-dropdown cart-body">
                             @if(Session::has('cart'))
                                 @foreach($product_cart as $pr_cart)
                                     <div class="cart-item">
+                                        <a class="cart-item-delete" href="{{ route('delCart', $pr_cart['item']['id']) }}">
+                                            <i class="fa fa-times"></i>
+                                        </a>
                                         <div class="media">
-                                            <a class="pull-left" href="#">
+                                            <a class="pull-left" href="{{ route('product.detail', $pr_cart['item']['id']) }}">
                                                 <img src="source/image/product/{!! $pr_cart['item']['image'] !!}" alt="">
                                             </a>
                                             <div class="media-body">
                                                 <span class="cart-item-title">{!! $pr_cart['item']['name'] !!}</span>
                                                 <span class="cart-item-amount">{!! $pr_cart['qty'] !!}*
                                                     <span>
-                                                        {!! number_format($pr_cart['item']['unit_price']) !!} đồng
+                                                        @if($pr_cart['item']['promotion_price'] == 0)
+                                                            {!! number_format($pr_cart['item']['unit_price']) !!}
+                                                        @endif
+                                                            {!! number_format($pr_cart['item']['promotion_price']) !!}
                                                     </span>
                                                 </span>
                                             </div>
@@ -55,7 +65,9 @@
                                 @endforeach
                                 <div class="cart-caption">
                                     <div class="cart-total text-right">Tổng tiền:
-                                        <span class="cart-total-value">{!! number_format($totalPrice) !!} đồng</span>
+                                        <span class="cart-total-value">
+                                            {!! number_format($totalPrice) !!} đồng
+                                        </span>
                                     </div>
                                     <div class="clearfix"></div>
 

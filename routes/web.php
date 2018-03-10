@@ -25,3 +25,5 @@ Route::get('contact', 'PageController@contact')->name('contact');
 Route::get('product_detail/{id}', 'PageController@getProductDetail')->name('product.detail');
 
 Route::get('add-to-cart/{id}', 'PageController@addCart')->name('addCart');
+
+Route::get('del-item-cart/{id}', 'PageController@delCart')->name('delCart');
