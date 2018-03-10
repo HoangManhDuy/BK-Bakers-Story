@@ -25,8 +25,8 @@
             <div class="pull-right beta-components space-left ov">
                 <div class="space10">&nbsp;</div>
                 <div class="beta-comp">
-                    <form role="search" method="get" id="searchform" action="/">
-                        <input type="text" value="" name="s" id="s" placeholder="Nhập từ khóa..." />
+                    <form role="search" method="get" id="searchform" action="{{ route('search.product') }}">
+                        <input type="text" value="" name="key" id="key" placeholder="Nhập từ khóa..." />
                         <button class="fa fa-search" type="submit" id="searchsubmit"></button>
                     </form>
                 </div>
@@ -73,7 +73,9 @@
 
                                     <div class="center">
                                         <div class="space10">&nbsp;</div>
-                                        <a href="{{ route('order') }}" class="beta-btn primary text-center">Đặt hàng <i class="fa fa-chevron-right"></i></a>
+                                        <a href="{{ route('order') }}" class="beta-btn primary text-center">Đặt hàng
+                                            <i class="fa fa-chevron-right"></i>
+                                        </a>
                                     </div>
                                 </div>
                             @endif
@@ -86,7 +88,9 @@
     </div> <!-- .header-body -->
     <div class="header-bottom" style="background-color: #0277b8;">
         <div class="container">
-            <a class="visible-xs beta-menu-toggle pull-right" href="#"><span class='beta-menu-toggle-text'>Menu</span> <i class="fa fa-bars"></i></a>
+            <a class="visible-xs beta-menu-toggle pull-right" href="#"><span class='beta-menu-toggle-text'>Menu</span>
+                <i class="fa fa-bars"></i>
+            </a>
             <div class="visible-xs clearfix"></div>
             <nav class="main-menu">
                 <ul class="l-inline ov">

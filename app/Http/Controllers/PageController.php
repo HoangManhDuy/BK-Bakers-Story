@@ -129,4 +129,13 @@ class PageController extends Controller
 
         return redirect()->back()->with('thongbao', 'Đặt hàng thành công');
     }
+
+    public function getSearchProduct(Request $req)
+    {
+        $key = $req->key;
+        $search = Product::where('name', 'like', '%'.$req->key.'%')
+                            ->orWhere('unit_price', $req->key)->paginate(12);
+
+        return view('page.search', compact('search','key'));
+    }
 }

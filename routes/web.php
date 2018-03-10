@@ -31,3 +31,5 @@ Route::get('del-item-cart/{id}', 'PageController@delCart')->name('delCart');
 Route::get('order', 'PageController@order')->name('order');
 
 Route::post('order', 'PageController@postOrder')->name('postOrder');
+
+Route::get('search_product', 'PageController@getSearchProduct')->name('search.product');
