@@ -24,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('loai_sp', $loai_sp);
         });
 
-        View::composer('library.header', function ($view)
+        View::composer(['library.header', 'page.order'], function ($view)
         {
             if(Session('cart'))
             {

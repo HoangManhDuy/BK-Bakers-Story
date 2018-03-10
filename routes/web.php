@@ -27,3 +27,7 @@ Route::get('product_detail/{id}', 'PageController@getProductDetail')->name('prod
 Route::get('add-to-cart/{id}', 'PageController@addCart')->name('addCart');
 
 Route::get('del-item-cart/{id}', 'PageController@delCart')->name('delCart');
+
+Route::get('order', 'PageController@order')->name('order');
+
+Route::post('order', 'PageController@postOrder')->name('postOrder');
