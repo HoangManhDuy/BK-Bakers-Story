@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
 Route::get('index', 'PageController@home')->name('home');
 
 Route::get('product_type/{type}', 'PageController@productType')->name('product.type');
@@ -33,3 +36,7 @@ Route::get('order', 'PageController@order')->name('order');
 Route::post('order', 'PageController@postOrder')->name('postOrder');
 
 Route::get('search_product', 'PageController@getSearchProduct')->name('search.product');
+
+Route::get('login/facebook', 'Auth\LoginController@redirectToProvider')->name('facebook');
+
+Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');

@@ -1,0 +1,20 @@
+{
+  "name": "Hoang Duy",
+  "description": "Story",
+  "main": "Bk-Story",
+  "authors": [
+    "hoang duy <hoangduyib96@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/HoangManhDuy/BK-Bakers-Story",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Font-Awesome": "^5.0.8"
+  }
+}
