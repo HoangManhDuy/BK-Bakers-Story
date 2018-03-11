@@ -33,3 +33,6 @@ Route::get('order', 'PageController@order')->name('order');
 Route::post('order', 'PageController@postOrder')->name('postOrder');
 
 Route::get('search_product', 'PageController@getSearchProduct')->name('search.product');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
